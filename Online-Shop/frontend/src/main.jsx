@@ -6,11 +6,13 @@ import App from './App.jsx'
 import './assets/styles/index.css'
 import './assets/styles/bootstrap.custom.css'
 import Home from './pages/Home.jsx';
+import ProductDetail from './pages/ProductDetail.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index={true} path='/' element={<Home />} />
+      <Route path="/product/:id" element={<ProductDetail />} />
     </Route>
   )
 )
