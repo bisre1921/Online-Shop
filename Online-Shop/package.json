@@ -1,0 +1,15 @@
+{
+  "name": "online-shop",
+  "version": "1.0.0",
+  "description": "e-commerce website ",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "bisrat",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
