@@ -2,13 +2,23 @@ import { useParams } from "react-router-dom"
 import {Link} from "react-router-dom"
 import {Row, Col, Image, ListGroup, Card, Button} from "react-bootstrap"
 import Rating from "../components/Rating"
-import products from "../products";
+import axios from "axios"
+import { useEffect, useState } from "react"
 
 
 const ProductDetail = () => {
+    const [product, setProduct] = useState({});
+
     const params = useParams();
     const productId = params.id;
-    const product = products.find((p) => p._id === productId);
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(`http://localhost:5000/api/products/${productId}`);
+            setProduct(data);
+        }
+        fetchProduct();
+    } , [productId])
     
   return (
     <>
@@ -50,7 +60,6 @@ const ProductDetail = () => {
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row>
-
                                 <Col>
                                     Status:
                                 </Col>
