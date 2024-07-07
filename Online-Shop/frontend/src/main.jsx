@@ -10,6 +10,7 @@ import ProductDetail from './pages/ProductDetail.jsx';
 import {Provider} from "react-redux";
 import store from "./store.jsx";
 import Cart from './pages/Cart.jsx';
+import Login from './pages/Login.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route index={true} path='/' element={<Home />} />
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/login" element={<Login />} />
     </Route>
   )
 )
