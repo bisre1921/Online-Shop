@@ -6,6 +6,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import ProductRoutes from "./routes/ProductRoutes.js";
 import UserRoutes from "./routes/UserRoutes.js";
+import OrderRoutes from "./routes/OrderRoutes.js";
 import Product from "./models/ProductModel.js";
 import { errorHandler, notFound } from "./middleware/ErrorMiddleware.js";
 
@@ -26,6 +27,7 @@ app.get("/" , (req , res) => {
 
 app.use("/api/products" , ProductRoutes);
 app.use("/api/users" , UserRoutes);
+app.use("/api/orders" , OrderRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
